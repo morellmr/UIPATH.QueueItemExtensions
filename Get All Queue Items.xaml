@@ -1,30 +1,26 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Get_All_Queue_Items" this:Get_All_Queue_Items.FilterTimeProcessing="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="QueueName" Type="InArgument(x:String)">
+    <x:Property sap2010:Annotation.AnnotationText="The name of the queue to get items from" Name="QueueName" Type="InArgument(x:String)">
       <x:Property.Attributes>
         <RequiredArgumentAttribute />
       </x:Property.Attributes>
     </x:Property>
-    <x:Property sap2010:Annotation.AnnotationText="{}{QueueItemStatus.Successful, QueueItemStatus.Failed} -&gt; Default &quot;All&quot; if Empty&#xD;&#xA;{QueueItemPriority.High} -&gt; Default &quot;All&quot; if Empty" Name="QueueItemStates" Type="InArgument(ui:QueueItemStatus[])" />
-    <x:Property sap2010:Annotation.AnnotationText="List of queueitems" Name="QueueItems" Type="OutArgument(scg:List(ui:QueueItem))" />
-    <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="FilterTo" Type="InArgument(s:Nullable(s:DateTime))" />
-    <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="FilterFrom" Type="InArgument(s:Nullable(s:DateTime))" />
-    <x:Property sap2010:Annotation.AnnotationText="Queue Item Reference (StartsWith)" Name="Reference" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="FilterTop" Type="InArgument(x:Int32)" />
-    <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="Continue_OnError" Type="InArgument(x:Boolean)" />
-    <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="Priorities" Type="InArgument(ui:QueueItemPriority[])" />
-    <x:Property sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="OrchestratorFolderPath" Type="InArgument(x:String)">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
-    <x:Property sap2010:Annotation.AnnotationText="By default, &quot;FilterTo&quot; and &quot;FilterFrom&quot; will use &quot;CreationTime&quot; .Set this to TRUE to use &quot;StartProcessing Time&quot; and &quot;End Processing Time&quot;. instead " Name="FilterTimeProcessing" Type="InArgument(x:Boolean)" />
+    <x:Property sap2010:Annotation.AnnotationText="Filter items by state" Name="QueueItemStates" Type="InArgument(ui:QueueItemStatus[])" />
+    <x:Property sap2010:Annotation.AnnotationText="The corresponding QueueItems" Name="QueueItems" Type="OutArgument(scg:List(ui:QueueItem))" />
+    <x:Property sap2010:Annotation.AnnotationText="Filter items by maximum creation date" Name="FilterTo" Type="InArgument(s:Nullable(s:DateTime))" />
+    <x:Property sap2010:Annotation.AnnotationText="Filter items by minimum creation date" Name="FilterFrom" Type="InArgument(s:Nullable(s:DateTime))" />
+    <x:Property sap2010:Annotation.AnnotationText="Filter items by reference using the 'Starts With' filter strategy" Name="Reference" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Number of items to retrieve" Name="FilterTop" Type="InArgument(x:Int32)" />
+    <x:Property sap2010:Annotation.AnnotationText="Specifies to continue executing the remaining activities even if the current activity failed" Name="Continue_OnError" Type="InArgument(x:Boolean)" />
+    <x:Property sap2010:Annotation.AnnotationText="Filter items by priority" Name="Priorities" Type="InArgument(ui:QueueItemPriority[])" />
+    <x:Property sap2010:Annotation.AnnotationText="The path of the orchestrator folder you want to use" Name="OrchestratorFolderPath" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="By default, 'To' and 'From' will use 'Creation Time'. Set this to True to use 'Start Processing Time' and 'End Processing Time' instead" Name="FilterTimeProcessing" Type="InArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap2010:Annotation.AnnotationText>UPTF000000E4eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiR2V0cyBVcCBUbyAxIDAwMCAgcXVldWUgaXRlbXMgKGJ5cGFzc2VzIDEwMCBsaW1pdCBvZiBHZXQgUXVldWUgSXRlbXMpIiwiPFZlcnNpb24+a19fQmFja2luZ0ZpZWxkIjoxfQ==</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>1072,2912</sap:VirtualizedContainerService.HintSize>
+  <sap2010:Annotation.AnnotationText>UPTF000000E4eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjoiR2V0cyBVcCBUbyAxMDAgMDAwICBxdWV1ZSBpdGVtcyAoYnlwYXNzZXMgMTAwIGxpbWl0IG9mIEdldCBRdWV1ZSBJdGVtcykiLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
+  <sap:VirtualizedContainerService.HintSize>1006,3572</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_All_Queue_Items_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -112,7 +108,7 @@
       <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Gets Up To 1 000  queue items (bypasses 100 limit of Get Queue Items)" DisplayName="Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="794,3214" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Gets Up To 100 000  queue items (bypasses 100 limit of Get Queue Items)" DisplayName="Get_All_Queue_Items" sap:VirtualizedContainerService.HintSize="794,3507" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" sap2010:Annotation.AnnotationText="Same as QueueItems Get" Name="Recursive" />
       <Variable x:TypeArguments="x:Int32" Name="top" />
@@ -123,7 +119,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="CURL Example:&#xA;&#xA;curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20192%20and%20Progress%20eq%20'Prueba1'%20and%20startswith(Reference%2C'Test')&amp;%24top=1000&quot; -H  &quot;accept: application/json&quot;" DisplayName="API CALL" sap:VirtualizedContainerService.HintSize="732,3072" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence sap2010:Annotation.AnnotationText="CURL Example:&#xA;&#xA;curl -X GET &quot;https://orchestratorsta.masmovil.com/odata/QueueItems?%24filter=QueueDefinitionId%20eq%20192%20and%20Progress%20eq%20'Prueba1'%20and%20startswith(Reference%2C'Test')&amp;%24top=1000&quot; -H  &quot;accept: application/json&quot;" DisplayName="API CALL" sap:VirtualizedContainerService.HintSize="732,3365" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strEndpointFormat" />
         <Variable x:TypeArguments="x:Int32" Name="skip" />
@@ -634,15 +630,15 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[Recursive And If(FilterTop.EQUALS(-1), True, QueueItems.count &lt;= FilterTop)]" DisplayName="Make calls until no more data" sap:VirtualizedContainerService.HintSize="670,2242" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2" MaxIterations="50">
+      <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[Recursive And If(FilterTop.EQUALS(-1), True, QueueItems.count &lt;= FilterTop)]" DisplayName="Make calls until no more data" sap:VirtualizedContainerService.HintSize="670,2341" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2" MaxIterations="1000">
         <ui:InterruptibleDoWhile.Body>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="634,2076" sap2010:WorkflowViewState.IdRef="Sequence_33">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="634,2175" sap2010:WorkflowViewState.IdRef="Sequence_33">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Make api call" sap:VirtualizedContainerService.HintSize="572,1965" sap2010:WorkflowViewState.IdRef="Sequence_30">
+            <Sequence DisplayName="Make api call" sap:VirtualizedContainerService.HintSize="572,2064" sap2010:WorkflowViewState.IdRef="Sequence_30">
               <Sequence.Variables>
                 <Variable x:TypeArguments="scg:List(ui:QueueItem)" Name="QueueItemsPartial" />
                 <Variable x:TypeArguments="x:String" Name="jsonResponse" />
@@ -656,7 +652,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:Comment sap:VirtualizedContainerService.HintSize="510,75" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// TODO: Fix the &quot;top&quot; for the last iteration to get less than 100" />
-              <Assign DisplayName="Add FilterTop" sap:VirtualizedContainerService.HintSize="510,81" sap2010:WorkflowViewState.IdRef="Assign_43">
+              <Assign DisplayName="Add FilterTop" sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_43">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[strEndpointCall]</OutArgument>
                 </Assign.To>
@@ -673,7 +669,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
               <ui:OrchestratorHttpRequest ResponseHeaders="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Orchestrator HTTP Request" FolderPath="[OrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="510,242" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_1" JSONPayload="{}{}" Method="GET" RelativeEndpoint="[strEndpointCall]" Result="[jsonResponse]" StatusCode="[intStatusCode]" />
-              <If Condition="[intStatusCode = 200]" DisplayName="If Status OK" sap:VirtualizedContainerService.HintSize="510,295" sap2010:WorkflowViewState.IdRef="If_6">
+              <If Condition="[intStatusCode = 200]" DisplayName="If Status OK" sap:VirtualizedContainerService.HintSize="510,473" sap2010:WorkflowViewState.IdRef="If_6">
                 <If.Then>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke __DeserializeQueueItems workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="__DeserializeQueueItems.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
@@ -693,7 +689,7 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <If sap2010:Annotation.AnnotationText="The condition would be &quot;next api call returns 0 items&quot; but it can be skipped since the limit is 100, so if we get less than 100 it means we're already at the end" Condition="[QueueItemsPartial.Count &lt; 100]" DisplayName="End of items" sap:VirtualizedContainerService.HintSize="510,474" sap2010:WorkflowViewState.IdRef="If_12">
+              <If sap2010:Annotation.AnnotationText="The condition would be &quot;next api call returns 0 items&quot; but it can be skipped since the limit is 100, so if we get less than 100 it means we're already at the end" Condition="[QueueItemsPartial.Count &lt; 100]" DisplayName="End of items" sap:VirtualizedContainerService.HintSize="510,394" sap2010:WorkflowViewState.IdRef="If_12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
