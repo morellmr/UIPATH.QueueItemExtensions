@@ -8990,15 +8990,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jmcaravaca\\.nuget\\packages\\": {}
+    "C:\\Users\\E_MMH242\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "QueueItemExtensions",
       "projectName": "QueueItemExtensions",
-      "projectPath": "C:\\ClonedRepos\\Libraries\\UIPATH.QueueItemExtensions\\.local",
-      "packagesPath": "C:\\Users\\jmcaravaca\\.nuget\\packages\\",
-      "outputPath": "C:\\ClonedRepos\\Libraries\\UIPATH.QueueItemExtensions\\.local"
+      "projectPath": "C:\\Users\\E_MMH242\\Documents\\UiPath\\Libraries\\UIPATH.QueueItemExtensions\\.local",
+      "packagesPath": "C:\\Users\\E_MMH242\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\E_MMH242\\Documents\\UiPath\\Libraries\\UIPATH.QueueItemExtensions\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
@@ -9019,7 +9019,7 @@
             "version": "[1.16.2, 1.16.2]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\jmcaravaca\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
