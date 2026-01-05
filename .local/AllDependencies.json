@@ -8996,9 +8996,9 @@
     "restore": {
       "projectUniqueName": "QueueItemExtensions",
       "projectName": "QueueItemExtensions",
-      "projectPath": "C:\\Users\\E_MMH242\\Documents\\UiPath\\Libraries\\UIPATH.QueueItemExtensions\\.local",
+      "projectPath": "C:\\Users\\E_MMH242\\Documents\\UiPath\\Library\\UIPATH.QueueItemExtensions\\.local",
       "packagesPath": "C:\\Users\\E_MMH242\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\E_MMH242\\Documents\\UiPath\\Libraries\\UIPATH.QueueItemExtensions\\.local"
+      "outputPath": "C:\\Users\\E_MMH242\\Documents\\UiPath\\Library\\UIPATH.QueueItemExtensions\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
