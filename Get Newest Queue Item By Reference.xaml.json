@@ -1,0 +1,69 @@
+{
+  "DisplayName": "Get Newest Queue Item By Reference",
+  "Tooltip": "Returns the newest queue item that matches the Reference given. Filter is StartsWith\nINPUTS:\n- QueueName: String with the full QueueName\n- OrchestratorFolderPath: full path of the orchstrator folder\n- Reference (optional): References of the queue items (Can be empty)\n- EndTime: By default, the sorting is done by CreationTime. Set EndTime to True to sort by \"EndProcessingTime\". \nOUTPUTS:\n- QueueItems: List of QueueItems found\n",
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "OrchestratorFolderPath",
+      "DisplayName": "Orchestrator Folder Path",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "QueueName",
+      "DisplayName": "Queue Name",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Reference",
+      "DisplayName": "Reference",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "EndTime",
+      "DisplayName": "End Time",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "Toggle",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "QueueItem",
+      "DisplayName": "Queue Item",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}
