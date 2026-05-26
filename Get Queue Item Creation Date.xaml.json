@@ -1,0 +1,33 @@
+{
+  "DisplayName": "Get Queue Item Creation Date",
+  "Tooltip": "Gets the queue item creation date in Orchestrator.",
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "in_QueueItem",
+      "DisplayName": "Queue item",
+      "Category": null,
+      "Tooltip": "The QueueItem object we want to retrieve the date from.",
+      "Placeholder": "The QueueItem object we want to retrieve the date from.",
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "out_CreationTime",
+      "DisplayName": "Creation date",
+      "Category": null,
+      "Tooltip": "The queue item's creation date.",
+      "Placeholder": "The queue item's creation date.",
+      "Widget": "Datetime",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}
